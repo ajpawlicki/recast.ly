@@ -2,6 +2,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    // this.onVideoTitleClick.bind(this);
+    
     this.state = {
       currentVideo: window.exampleVideoData[0],
       list: window.exampleVideoData
@@ -13,7 +15,7 @@ class App extends React.Component {
   onVideoTitleClick() {
     this.setState({
       // currentVideo: this.props.videos.video
-      currentVideo: props.videos.video
+      currentVideo: this.props.videos.video
     });
   }
 
