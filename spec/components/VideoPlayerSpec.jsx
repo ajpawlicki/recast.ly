@@ -23,7 +23,6 @@ describe ('VideoPlayer', function() {
         <VideoPlayer video={window.fakeVideoData[1]} />
       </Wrapper>
     );
-
     hackReactorVideo = renderIntoDocument(
       <Wrapper>
         <VideoPlayer video={window.fakeVideoData[2]} />

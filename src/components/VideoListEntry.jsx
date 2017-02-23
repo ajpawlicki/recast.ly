@@ -1,11 +1,11 @@
-var VideoListEntry = () => (
+var VideoListEntry = (videoObject) => (
   <div className="video-list-entry">
     <div className="media-left media-middle">
-      <img className="media-object" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/default.jpg" alt="" />
+      <img className="media-object" src={videoObject.video.snippet.thumbnails.default.url} alt="https://i.ytimg.com/vi/dQw4w9WgXcQ/default.jpg" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">Video Title</div>
-      <div className="video-list-entry-detail">Video Description</div>
+      <div className="video-list-entry-title">{videoObject.video.snippet.title}</div>
+      <div className="video-list-entry-detail">{videoObject.video.snippet.description}</div>
     </div>
   </div>
 );
