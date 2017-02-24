@@ -1,11 +1,11 @@
-var VideoListEntry = (videoObject) => (
+var VideoListEntry = (props) => (
   <div className="video-list-entry">
     <div className="media-left media-middle">
-      <img className="media-object" src={videoObject.video.snippet.thumbnails.default.url} alt="https://i.ytimg.com/vi/dQw4w9WgXcQ/default.jpg" />
+      <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="https://i.ytimg.com/vi/dQw4w9WgXcQ/default.jpg" />
     </div>
     <div className="media-body">
-      <div onClick={window.App.onClickVideoTitle} className="video-list-entry-title">{videoObject.video.snippet.title}</div>
-      <div className="video-list-entry-detail">{videoObject.video.snippet.description}</div>
+      <div onClick={props.clickvideoentry.bind(this, props.video)} className="video-list-entry-title">{props.video.snippet.title}</div>
+      <div className="video-list-entry-detail">{props.video.snippet.description}</div>
     </div>
   </div>
 );

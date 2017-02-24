@@ -2,20 +2,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.onVideoTitleClick.bind(this);
-    
     this.state = {
       currentVideo: window.exampleVideoData[0],
       list: window.exampleVideoData
     };
-
-
+    
+    // this.onVideoTitleClick.bind(this);
   }
 
-  onVideoTitleClick() {
+  onVideoTitleClick(videoListEntry) {
+    console.log('click worked!');
     this.setState({
       // currentVideo: this.props.videos.video
-      currentVideo: this.props.videos.video
+      currentVideo: videoListEntry
     });
   }
 
@@ -27,7 +26,7 @@ class App extends React.Component {
         <VideoPlayer video={this.state.currentVideo}/>
       </div>
       <div className="col-md-5">
-        <VideoList videos={this.state.list}/>
+        <VideoList videos={this.state.list} clickvideolist={this.onVideoTitleClick.bind(this)}/>
       </div>
       </div>
    );
