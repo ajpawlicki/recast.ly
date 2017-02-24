@@ -15,10 +15,7 @@ var searchYouTube = (options, callback) => {
     // look back here
     contentType: 'application/json',
     success: function(data) {
-      console.log(data);
-      if (callback) {
-        callback(data.items);
-      }
+      callback(data.items);
 
       // data.forEach(function(item) {
       //   callback(item);

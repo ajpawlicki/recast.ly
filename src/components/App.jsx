@@ -18,10 +18,23 @@ class App extends React.Component {
     });
   }
 
+  getYouTubeSearch(query) {
+    var options = {};
+    options.key = this.props.api;
+    options.query = query;
+
+    this.props.searchYouTube(options, (videos) =>
+      this.setState({
+        currentVideo: videos[0],
+        list: videos
+      })
+    );
+  }
+
   render() {
     return (
       <div>
-        <Nav />
+        <Nav handleYouTubeSearch={this.getYouTubeSearch.bind(this)} />
       <div className="col-md-7">
         <VideoPlayer video={this.state.currentVideo}/>
       </div>
@@ -30,6 +43,10 @@ class App extends React.Component {
       </div>
       </div>
    );
+  }
+
+  componentDidMount (key) {
+    this.getYouTubeSearch();
   }
 }
 
