@@ -11,7 +11,7 @@ class App extends React.Component {
   }
 
   onVideoTitleClick(videoListEntry) {
-    console.log('click worked!');
+    // console.log('click worked!');
     this.setState({
       // currentVideo: this.props.videos.video
       currentVideo: videoListEntry
